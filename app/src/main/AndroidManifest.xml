@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LibraryActivity" />
+        <activity android:name=".NowPlayingActivity" />
     </application>
 
 </manifest>
