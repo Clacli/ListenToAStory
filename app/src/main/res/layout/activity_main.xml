@@ -11,41 +11,55 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
+        android:gravity="center|bottom"
         android:text="@string/title_of_book" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/volume_number" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|top"
+        android:text="@string/fable_numeration" />
 
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/this_is_a_librivox" />
 
     <TextView
         android:id="@+id/library"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:gravity="center"
         android:text="@string/library" />
 
     <TextView
         android:id="@+id/audio_file_provider_info"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:gravity="center"
         android:text="@string/more_on_librivox" />
 
     <TextView
         android:id="@+id/author_search"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:gravity="center"
         android:text="@string/search_aesop_on_the_web" />
 
     <TextView
         android:id="@+id/author_info"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:gravity="center"
         android:text="@string/more_on_aesop" />
 
