@@ -12,9 +12,13 @@ public class MainActivity extends AppCompatActivity {
 
     // Define global variables
     private TextView libraryTextView;
-    private TextView audioFileProviderInfo;
+    private TextView audioFileProviderInfoTextView;
     private TextView authorSearchTextView;
-    private TextView authorInfo;
+    private TextView authorInfoTextView;
+    private final String lVHomeUrl = "https://librivox.org/";
+    public final String aesopFable = "Aesop fable";
+    public final String wHomeUrl = "https://en.wikipedia.org/wiki/Aesop";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +36,39 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         // Find the view with ID audio_file_provider_info and instantiate it in a TextView object
-        audioFileProviderInfo = findViewById(R.id.audio_file_provider_info);
+        audioFileProviderInfoTextView = findViewById(R.id.audio_file_provider_info);
+        // Set an onClickListener to this view so that so that an implicit intent is sent to open a
+        // web page when audioFileProviderInfoTextView is clicked
+        audioFileProviderInfoTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openThisWebPage(lVHomeUrl);
+            }
+        });
+
         // Find the view with ID author_search and instantiate it in a TextView object
         authorSearchTextView = findViewById(R.id.author_search);
-        // Find the view with ID author_info and instantiate it in a TextView object
+        // Set an onClickListener to this view so that  when authorSearchTextView is clicked
+        // an implicit intent is sent to open a search on the web
         authorSearchTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                searchTheWeb("Aesop fable");
+                searchTheWeb(aesopFable);
             }
         });
-        authorInfo = findViewById(R.id.author_info);
+
+        // Find the view with ID author_info and instantiate it in a TextView object
+        authorInfoTextView = findViewById(R.id.author_info);
+        // Set an onClickListener to this view so that  when authorInfoTextView is clicked
+        // an implicit intent is sent to open a web page
+        authorInfoTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openThisWebPage(wHomeUrl);
+            }
+        });
     }
 
     public void searchTheWeb(String query) {
@@ -54,4 +79,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void openThisWebPage(String url) {
+        Uri webPage = Uri.parse(url);
+        Intent i = new Intent(Intent.ACTION_VIEW, webPage);
+        if (i.resolveActivity(getPackageManager()) != null) {
+            startActivity(i);
+        }
+    }
 }
