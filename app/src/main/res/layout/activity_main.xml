@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center"
-        android:text="@string/more_aesop_on_librivox" />
+        android:text="@string/search_aesop_on_the_web" />
 
     <TextView
         android:id="@+id/author_info"

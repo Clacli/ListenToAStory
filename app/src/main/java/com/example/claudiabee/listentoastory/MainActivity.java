@@ -1,6 +1,8 @@
 package com.example.claudiabee.listentoastory;
 
+import android.app.SearchManager;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,6 +37,21 @@ public class MainActivity extends AppCompatActivity {
         // Find the view with ID author_search and instantiate it in a TextView object
         authorSearchTextView = findViewById(R.id.author_search);
         // Find the view with ID author_info and instantiate it in a TextView object
+        authorSearchTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchTheWeb("Aesop fable");
+            }
+        });
         authorInfo = findViewById(R.id.author_info);
     }
+
+    public void searchTheWeb(String query) {
+        Intent i = new Intent(Intent.ACTION_WEB_SEARCH);
+        i.putExtra(SearchManager.QUERY, query);
+        if (i.resolveActivity(getPackageManager()) != null) {
+            startActivity(i);
+        }
+    }
+
 }
