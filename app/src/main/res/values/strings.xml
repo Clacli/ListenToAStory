@@ -10,4 +10,6 @@
     <string name="fable_numeration">(Fables 26 &#8211; 50)</string>
     <string name="volume_number">Vol 02</string>
     <string name="read_by">read by</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
 </resources>

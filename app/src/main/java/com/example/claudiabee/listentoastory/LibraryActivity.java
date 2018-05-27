@@ -3,6 +3,7 @@ package com.example.claudiabee.listentoastory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -49,7 +50,7 @@ public class LibraryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the {@link Word} object at the given position the user clicked on
                 Fable currentFable = fables.get(position);
-                // Log.d("MainActivity", "current Fable" + currentFable.toString());
+                Log.d("LibraryActivity", "current Fable" + currentFable.toString());
                 // Send an explicit intent to open NowPlaying activity
                 Intent i = new Intent(getApplicationContext(), NowPlayingActivity.class);
                 i.putExtra("fableTitle", currentFable.getFableTitle());
