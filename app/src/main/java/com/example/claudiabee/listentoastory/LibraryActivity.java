@@ -57,7 +57,7 @@ public class LibraryActivity extends AppCompatActivity {
                 i.putExtra("readerName", currentFable.getReaderName());
                 i.putExtra("bookTitle", currentFable.getBookTitle());
                 int audioResId = currentFable.getAudioResourceId();
-                i.putExtra("fableResourceId", audioResId);
+                i.putExtra("fableRawResourceId", audioResId);
                 startActivity(i);
 
             }
