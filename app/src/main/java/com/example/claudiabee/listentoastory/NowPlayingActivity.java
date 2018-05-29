@@ -95,4 +95,13 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void releaseMyMediaPlayer() {
+        if (myMediaPlayer != null) {
+            // Release myMediaPlayer object and its associated resources
+            myMediaPlayer.release();
+            // Set myMediaPlayer object to null
+            myMediaPlayer = null;
+        }
+    }
 }
