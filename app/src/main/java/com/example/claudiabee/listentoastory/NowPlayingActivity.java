@@ -70,8 +70,15 @@ public class NowPlayingActivity extends AppCompatActivity {
         // Retrieve the raw resource ID for the Fable object chosen in the LibraryActivity
         fableRawResourceId = i.getIntExtra("fableRawResourceId", 0);
 
+        // Release mediaplayer resources
+        //releaseMyMediaPlayer();
+
         // Create a MediaPlayer instance and store it in myMediaPlayer variable
         myMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
+
+        // TODO: Manage playback state on change configuration
+
+        // TODO: Add an AudioManager
 
         // Set an onclick listener on the playButton object
         playButton.setOnClickListener(new View.OnClickListener() {
@@ -81,7 +88,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                 myMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
                     public void onCompletion(MediaPlayer mp) {
-                        Toast.makeText(getApplicationContext(), "Playback completed", Toast.LENGTH_SHORT).show();
+                        releaseMyMediaPlayer();
                     }
                 });
             }
@@ -96,12 +103,21 @@ public class NowPlayingActivity extends AppCompatActivity {
         });
     }
 
+    // Release myMediaPlayer resources when the NowPlayingActivity is no longer visible on the screen
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMyMediaPlayer();
+    }
+
     public void releaseMyMediaPlayer() {
         if (myMediaPlayer != null) {
             // Release myMediaPlayer object and its associated resources
             myMediaPlayer.release();
             // Set myMediaPlayer object to null
             myMediaPlayer = null;
+
+            Toast.makeText(getApplicationContext(), "Playback completed", Toast.LENGTH_SHORT).show();
         }
     }
 }
