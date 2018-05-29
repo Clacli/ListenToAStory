@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -70,10 +69,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         // Retrieve the raw resource ID for the Fable object chosen in the LibraryActivity
         fableRawResourceId = i.getIntExtra("fableRawResourceId", 0);
 
-        // Release mediaplayer resources
-        //releaseMyMediaPlayer();
-
-
         // TODO: Manage playback state on change configuration
 
         // TODO: Add an AudioManager
@@ -82,6 +77,8 @@ public class NowPlayingActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Release mediaplayer resources
+                releaseMyMediaPlayer();
                 // Create a MediaPlayer instance and store it in myMediaPlayer variable
                 myMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
                 // Start playback
