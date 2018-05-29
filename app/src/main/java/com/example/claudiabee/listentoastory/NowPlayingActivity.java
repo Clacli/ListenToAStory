@@ -73,8 +73,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         // Release mediaplayer resources
         //releaseMyMediaPlayer();
 
-        // Create a MediaPlayer instance and store it in myMediaPlayer variable
-        myMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
 
         // TODO: Manage playback state on change configuration
 
@@ -84,6 +82,9 @@ public class NowPlayingActivity extends AppCompatActivity {
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a MediaPlayer instance and store it in myMediaPlayer variable
+                myMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
+                // Start playback
                 myMediaPlayer.start();
                 myMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                     @Override
