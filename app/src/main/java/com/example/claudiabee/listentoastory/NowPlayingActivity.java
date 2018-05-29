@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
@@ -77,6 +78,12 @@ public class NowPlayingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myMediaPlayer.start();
+                myMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        Toast.makeText(getApplicationContext(), "Playback completed", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
