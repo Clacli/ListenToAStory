@@ -176,8 +176,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             // unregisters the mAudioFocusChangeListener so we don't get anymore callbacks.
             // mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
             mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
-            // For debug purpose
-            Toast.makeText(getApplicationContext(), "Playback completed.\nResources released.\nAudioFocus abandoned.", Toast.LENGTH_SHORT).show();
         }
     }
 }

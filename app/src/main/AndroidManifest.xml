@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- The main/home activity (it has no parent activity) -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +19,21 @@
         </activity>
         <activity
             android:name=".LibraryActivity"
-            android:label="@string/library" />
+            android:label="@string/library"
+            android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.claudiabee.listentoastory.MainActivity"/>
+        </activity>
         <activity
             android:name=".NowPlayingActivity"
-            android:label="@string/now_playing" />
+            android:label="@string/now_playing"
+            android:parentActivityName=".LibraryActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.claudiabee.listentoastory.LibraryActivity"/>
+        </activity>
     </application>
-
 </manifest>
