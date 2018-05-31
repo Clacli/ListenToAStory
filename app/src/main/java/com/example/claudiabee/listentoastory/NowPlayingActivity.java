@@ -2,15 +2,16 @@ package com.example.claudiabee.listentoastory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
@@ -26,6 +27,11 @@ public class NowPlayingActivity extends AppCompatActivity {
     private String readerName;
     private String bookTitle;
     int fableRawResourceId;
+
+    // Create a seekbar as a member variable (I)
+    private SeekBar seekbar;
+    // Create a handler to constantly update the seekbar (I)
+    private Handler mSeekbarHandler = new Handler();
 
     /**
      * Handles playback of all the sound files
@@ -67,11 +73,37 @@ public class NowPlayingActivity extends AppCompatActivity {
                 }
             };
 
+    // Create a SeekBar.OnSeekBarChangeListener to seek the raw file to a particular time
+    // to seek the position where the seek bar pointer is
+    private SeekBar.OnSeekBarChangeListener mOnSeekBarChangeListener =
+            new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    if (fromUser) {
+                        mMyMediaPlayer.seekTo(progress);
+                    }
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            };
+
+
+
     private MediaPlayer.OnCompletionListener mOnCompletionListener =
             new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
             releaseMyMediaPlayer();
+            // Remove the handler (I)
+            mSeekbarHandler.removeCallbacks(mUpdateAudioSeekbar);
 
         }
     };
@@ -119,10 +151,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             titleOfBookTextView.setText(bookTitle);
         }
 
-
         // TODO: Manage playback state on change configuration
-
-        // TODO: Add an AudioManager
 
         // Set an onclick listener on the playButton object
         playButton.setOnClickListener(new View.OnClickListener() {
@@ -142,11 +171,29 @@ public class NowPlayingActivity extends AppCompatActivity {
                     if (resultOfAudioFocusRequest == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                         // We have audiofocus now
 
+                        seekbar = (SeekBar) findViewById(R.id.seekbar);
+                        seekbar.setClickable(false);
+                        seekbar.setBackgroundColor(Color.rgb(0, 128, 128));
+
                         // Create and setup the {@link Mediaplayer} for the audio associated with the
                         // raw resource ID
                         mMyMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
+
+
+
+                        // Set the max value for the seekbar geting duration of the playback (I)
+                        seekbar.setMax(mMyMediaPlayer.getDuration());
+
                         // Start playback
                         mMyMediaPlayer.start();
+
+                        // Call the handler when audio starts to play (I)
+                        mSeekbarHandler.postDelayed(mUpdateAudioSeekbar, 0);
+
+                        // Seek to the position where the seek bar pointer is
+                        seekbar.setOnSeekBarChangeListener(mOnSeekBarChangeListener);
+
+                        // Release resources and audiofocus when playback is completed
                         mMyMediaPlayer.setOnCompletionListener(mOnCompletionListener);
                     }
                 } else {
@@ -169,8 +216,12 @@ public class NowPlayingActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         releaseMyMediaPlayer();
+        // Remove the handler (I)
+        mSeekbarHandler.removeCallbacks(mUpdateAudioSeekbar);
+
     }
 
+    // Release MediaPlayer resources and and set it to null
     public void releaseMyMediaPlayer() {
         if (mMyMediaPlayer != null) {
             // Release mMyMediaPlayer object and its associated resources
@@ -183,4 +234,14 @@ public class NowPlayingActivity extends AppCompatActivity {
             mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
         }
     }
+
+    // This runnable helps the handler to update the seekbar (I)
+    private Runnable mUpdateAudioSeekbar = new Runnable() {
+        @Override
+        public void run(){
+            seekbar.setProgress(mMyMediaPlayer.getCurrentPosition());
+            // the handler updates the seek every 50ms
+            mSeekbarHandler.postDelayed(this, 50);
+        }
+    };
 }
