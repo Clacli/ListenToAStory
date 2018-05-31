@@ -67,6 +67,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         @Override
         public void onCompletion(MediaPlayer mp) {
             releaseMyMediaPlayer();
+
         }
     };
 
@@ -174,6 +175,9 @@ public class NowPlayingActivity extends AppCompatActivity {
             // Regardless of whether or not we were granted audio focus, abandon it. This also
             // unregisters the mAudioFocusChangeListener so we don't get anymore callbacks.
             // mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
+            mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
+            // For debug purpose
+            Toast.makeText(getApplicationContext(), "Playback completed.\nResources released.\nAudioFocus abandoned.", Toast.LENGTH_SHORT).show();
         }
     }
 }
