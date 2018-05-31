@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,8 +53,12 @@ public class NowPlayingActivity extends AppCompatActivity {
                             break;
                         case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
                             mMyMediaPlayer.pause();
+                            // Start audio file from the beginning
+                            mMyMediaPlayer.seekTo(0);
                         case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                             mMyMediaPlayer.pause();
+                            // Start audio file from the beginning
+                            mMyMediaPlayer.seekTo(0);
                             break;
                         case AudioManager.AUDIOFOCUS_LOSS:
                             // Abandon audiofocus and clean up resource when playback is done
