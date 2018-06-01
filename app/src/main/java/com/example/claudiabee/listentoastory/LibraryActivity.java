@@ -65,7 +65,7 @@ public class LibraryActivity extends AppCompatActivity {
 
         // Change color to list item divider
         ColorDrawable myColorDivider = new ColorDrawable(
-                this.getResources().getColor(R.color.colorPrimary));
+                this.getResources().getColor(R.color.library_list_item_divider));
         listItemView.setDivider(myColorDivider);
         listItemView.setDividerHeight(1);
     }

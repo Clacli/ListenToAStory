@@ -2,7 +2,6 @@ package com.example.claudiabee.listentoastory;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -173,7 +172,7 @@ public class NowPlayingActivity extends AppCompatActivity {
 
                         seekbar = (SeekBar) findViewById(R.id.seekbar);
                         seekbar.setClickable(false);
-                        seekbar.setBackgroundColor(Color.rgb(224, 247, 250));
+                        seekbar.setBackgroundResource(R.color.info_on_resource_provider);
 
                         // Create and setup the {@link Mediaplayer} for the audio associated with the
                         // raw resource ID

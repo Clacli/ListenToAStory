@@ -5,22 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="32dp"
+    android:padding="@dimen/now_playing_root_view_padding"
     tools:context=".NowPlayingActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/mediaplayer_title_viewgroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#00838F"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="@dimen/fable_title_container_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,11 +24,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:paddingBottom="@dimen/fable_title_vertical_spacing"
+            android:paddingLeft="@dimen/fable_title_horizontal_padding"
+            android:paddingRight="@dimen/fable_title_horizontal_padding"
+            android:paddingTop="@dimen/fable_title_vertical_space_external"
+            android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 
@@ -42,11 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/fable_title_vertical_spacing"
+            android:paddingLeft="@dimen/fable_title_horizontal_padding"
+            android:paddingRight="@dimen/fable_title_horizontal_padding"
+            android:paddingTop="@dimen/fable_title_vertical_spacing"
             android:text="@string/read_by"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -54,10 +49,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/fable_title_vertical_spacing"
+            android:paddingLeft="@dimen/fable_title_horizontal_padding"
+            android:paddingRight="@dimen/fable_title_horizontal_padding"
+            android:paddingTop="@dimen/fable_title_vertical_spacing"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -65,10 +61,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
+            android:paddingBottom="@dimen/fable_title_vertical_space_external"
+            android:paddingLeft="@dimen/fable_title_horizontal_padding"
+            android:paddingRight="@dimen/fable_title_horizontal_padding"
+            android:paddingTop="@dimen/fable_title_vertical_spacing"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
@@ -76,28 +73,28 @@
     <SeekBar
         android:id="@+id/seekbar"
         android:layout_width="match_parent"
-        android:layout_height="14dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="@dimen/seekbar_height"
+        android:layout_marginBottom="@dimen/seekbar_vertical_margin"
+        android:layout_marginEnd="@dimen/seekbar_horizontal_margin"
+        android:layout_marginLeft="@dimen/seekbar_horizontal_margin"
+        android:layout_marginRight="@dimen/seekbar_horizontal_margin"
+        android:layout_marginStart="@dimen/seekbar_horizontal_margin"
+        android:layout_marginTop="@dimen/seekbar_vertical_margin"
         app:layout_constraintBottom_toTopOf="@+id/button_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintTop_toBottomOf="@+id/mediaplayer_title_viewgroup"
+        app:layout_constraintVertical_bias="0.5" />
 
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="@dimen/button_container_vertical_margiin"
+        android:layout_marginEnd="@dimen/button_container_horizontal_margin"
+        android:layout_marginLeft="@dimen/button_container_horizontal_margin"
+        android:layout_marginRight="@dimen/button_container_horizontal_margin"
+        android:layout_marginStart="@dimen/button_container_horizontal_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,18 +102,16 @@
 
         <Button
             android:id="@+id/play_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1"
+            style="@style/MediaPlayerButtonStyle"
+            android:layout_marginEnd="@dimen/button_horizontal_margin"
+            android:layout_marginRight="@dimen/button_horizontal_margin"
             android:text="@string/play" />
 
         <Button
             android:id="@+id/pause_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_weight="1"
+            style="@style/MediaPlayerButtonStyle"
+            android:layout_marginLeft="@dimen/button_horizontal_margin"
+            android:layout_marginStart="@dimen/button_horizontal_margin"
             android:text="@string/pause" />
 
     </LinearLayout>

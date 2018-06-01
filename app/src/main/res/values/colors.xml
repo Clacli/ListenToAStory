@@ -3,4 +3,9 @@
     <color name="colorPrimary">#00838F</color>
     <color name="colorPrimaryDark">#006064</color>
     <color name="colorAccent">#DD2C00</color>
+    <color name="library_list_item">#0097A7</color>
+    <color name="library_list_item_divider">#E0F7FA</color>
+    <color name="info_on_resource_provider">#00ACC1</color>
+    <color name="web_search">#00BCD4</color>
+    <color name="info_on_author">#26C6DA</color>
 </resources>

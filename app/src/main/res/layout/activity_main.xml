@@ -8,67 +8,46 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        style="@style/BookTitleStyle"
         android:gravity="center|bottom"
-        android:background="#00838F"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="@android:color/white"
         android:text="@string/title_of_book" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        style="@style/BookTitleStyle"
         android:gravity="center"
-        android:background="#00838F"
-        android:text="@string/fable_numeration"
-        android:textColor="@android:color/white" />
+        android:text="@string/fable_numeration" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        style="@style/BookTitleStyle"
         android:gravity="center|top"
-        android:background="#00838F"
-        android:text="@string/editor"
-        android:textColor="@android:color/white" />
+        android:text="@string/editor" />
 
 
     <TextView
         android:id="@+id/library"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:background="#0097A7"
+        style="@style/ActionTextViewStyle"
+        android:background="@color/library_list_item"
         android:text="@string/library"
         android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/audio_file_provider_info"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:background="#00ACC1"
+        style="@style/ActionTextViewStyle"
+        android:background="@color/info_on_resource_provider"
         android:text="@string/more_on_librivox"
         android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/author_search"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:background="#00BCD4"
+        style="@style/ActionTextViewStyle"
+        android:background="@color/web_search"
         android:text="@string/search_aesop_on_the_web"
         android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/author_info"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:gravity="center"
-        android:background="#26C6DA"
+        style="@style/ActionTextViewStyle"
+        android:background="@color/info_on_author"
         android:text="@string/more_on_aesop"
         android:textColor="@android:color/black" />
 
