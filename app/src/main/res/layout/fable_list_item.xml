@@ -17,25 +17,31 @@
             android:id="@+id/fable_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
             tools:text="Titolo della Favola" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
-            android:text="@string/read_by" />
+            android:text="@string/read_by"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/reader_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
+            android:textColor="@android:color/black"
             tools:text="Reader's name" />
 
         <TextView
             android:id="@+id/book_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
             tools:text="Nome della raccolta" />
 
     </LinearLayout>
@@ -46,6 +52,7 @@
         android:layout_height="match_parent"
         android:layout_margin="4dp"
         android:gravity="bottom"
+        android:textColor="@android:color/black"
         tools:text="00:01:04" />
 
 </LinearLayout>

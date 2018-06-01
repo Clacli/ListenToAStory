@@ -1,13 +1,13 @@
 package com.example.claudiabee.listentoastory;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 /**
@@ -21,7 +21,7 @@ public class LibraryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_library);
 
         final ArrayList<Fable> fables = new ArrayList<Fable>();
-        fables.add(new Fable("The Fox and The Stork", "Kristin LeMoine", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_fox_and_the_stork, "00:01:11"));
+        fables.add(new Fable("The Fox and The Stork", "Kristin LeMoine", "Aesop's Fables Vol 02,\n(Fables 26-50)", R.raw.the_fox_and_the_stork, "00:01:11"));
         fables.add(new Fable("The Wolf in Sheep’s Clothing", "Kristin LeMoine", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_wolf_in_sheeps_clothing, "00:01:04"));
         fables.add(new Fable("The Stag in the Ox-Stall", "Annie Coleman Rothenberg", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_stag_in_the_ox_stall, "00:02:15"));
         fables.add(new Fable("The Milkmaid and Her Pail", "Annie Coleman Rothenberg", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_milkmaid_and_her_pail, "00:01:42"));
@@ -62,6 +62,12 @@ public class LibraryActivity extends AppCompatActivity {
 
             }
         });
+
+        // Change color to list item divider
+        ColorDrawable myColorDivider = new ColorDrawable(
+                this.getResources().getColor(R.color.colorPrimary));
+        listItemView.setDivider(myColorDivider);
+        listItemView.setDividerHeight(1);
     }
 }
 

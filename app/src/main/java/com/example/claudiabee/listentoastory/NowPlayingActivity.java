@@ -173,7 +173,7 @@ public class NowPlayingActivity extends AppCompatActivity {
 
                         seekbar = (SeekBar) findViewById(R.id.seekbar);
                         seekbar.setClickable(false);
-                        seekbar.setBackgroundColor(Color.rgb(0, 128, 128));
+                        seekbar.setBackgroundColor(Color.rgb(224, 247, 250));
 
                         // Create and setup the {@link Mediaplayer} for the audio associated with the
                         // raw resource ID

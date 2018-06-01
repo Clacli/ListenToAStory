@@ -9,15 +9,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/this_is_a_librivox" />
-
-    <TextView
-        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center|bottom"
+        android:background="#00838F"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"
         android:text="@string/title_of_book" />
 
     <TextView
@@ -25,14 +22,18 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/volume_number" />
+        android:background="#00838F"
+        android:text="@string/fable_numeration"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center|top"
-        android:text="@string/fable_numeration" />
+        android:background="#00838F"
+        android:text="@string/editor"
+        android:textColor="@android:color/white" />
 
 
     <TextView
@@ -40,27 +41,35 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:gravity="center"
-        android:text="@string/library" />
+        android:background="#0097A7"
+        android:text="@string/library"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/audio_file_provider_info"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:gravity="center"
-        android:text="@string/more_on_librivox" />
+        android:background="#00ACC1"
+        android:text="@string/more_on_librivox"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/author_search"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:gravity="center"
-        android:text="@string/search_aesop_on_the_web" />
+        android:background="#00BCD4"
+        android:text="@string/search_aesop_on_the_web"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/author_info"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:gravity="center"
-        android:text="@string/more_on_aesop" />
+        android:background="#26C6DA"
+        android:text="@string/more_on_aesop"
+        android:textColor="@android:color/black" />
 
 </LinearLayout>

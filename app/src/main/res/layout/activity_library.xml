@@ -4,6 +4,6 @@
     android:id="@+id/fable_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b7f8c8"
+    android:background="#E0F7FA"
     android:orientation="vertical"
     tools:context=".MainActivity" />
