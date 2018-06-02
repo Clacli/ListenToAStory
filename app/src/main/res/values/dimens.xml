@@ -4,7 +4,6 @@
     <dimen name="button_width">0dp</dimen>
     <dimen name="button_horizontal_margin">16dp</dimen>
     <dimen name="height_of_book_title_text_views_main">0dp</dimen>
-    <dimen name="main_option_list_height">64dp</dimen>
     <dimen name="now_playing_root_view_padding">32dp</dimen>
     <dimen name="library_title_container_vertical_spacing">8dp</dimen>
     <dimen name="fable_title_container_padding">16dp</dimen>

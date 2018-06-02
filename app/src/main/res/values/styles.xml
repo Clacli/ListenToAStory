@@ -9,8 +9,18 @@
         <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 
-    <!-- Main layout Book title TextViews style-->
-    <style name="BookTitleStyle">
+    <!-- Main port layout Book title TextViews style-->
+    <style name="PortBookTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_of_book_title_text_views_main</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Main land layout Book title TextViews style-->
+    <style name="LandBookTitleStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/height_of_book_title_text_views_main</item>
         <item name="android:layout_weight">1</item>
@@ -22,7 +32,7 @@
     <!-- Main Action Option TextView Style -->
     <style name="ActionTextViewStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/main_option_list_height</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>

@@ -8,23 +8,24 @@
     tools:context=".MainActivity">
 
     <TextView
-        style="@style/BookTitleStyle"
+        style="@style/PortBookTitleStyle"
         android:gravity="center|bottom"
         android:text="@string/title_of_book" />
 
     <TextView
-        style="@style/BookTitleStyle"
+        style="@style/PortBookTitleStyle"
         android:gravity="center"
         android:text="@string/fable_numeration" />
 
     <TextView
-        style="@style/BookTitleStyle"
+        style="@style/PortBookTitleStyle"
         android:gravity="center|top"
         android:text="@string/editor" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/library_list_item">
 
         <TextView
@@ -38,7 +39,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/info_on_resource_provider">
 
         <TextView
@@ -52,7 +54,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/web_search">
 
         <TextView
@@ -66,7 +69,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/info_on_author">
 
         <TextView
