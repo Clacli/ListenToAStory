@@ -8,13 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    // Define global variables
-    private TextView libraryTextView;
-    private TextView audioFileProviderInfoTextView;
-    private TextView authorSearchTextView;
-    private TextView authorInfoTextView;
+    //Bind views with Butter Knife and cast views in layout
+    @BindView(R.id.library)
+    TextView libraryTextView;
+    @BindView(R.id.audio_file_provider_info)
+    TextView audioFileProviderInfoTextView;
+    @BindView(R.id.author_search)
+    TextView authorSearchTextView;
+    @BindView(R.id.author_info)
+    TextView authorInfoTextView;
+
     private final String lVHomeUrl = "https://librivox.org/";
     public final String aesopFable = "Aesop fable";
     public final String wHomeUrl = "https://en.wikipedia.org/wiki/Aesop";
@@ -24,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        // Find the view with ID library and instantiate it in a TextView object
-        libraryTextView = findViewById(R.id.library);
         // Set an onClickListener to this view so that so that an explicit intent is sent when
         // libraryTextView is clicked
         libraryTextView.setOnClickListener(new View.OnClickListener() {
@@ -37,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Find the view with ID audio_file_provider_info and instantiate it in a TextView object
-        audioFileProviderInfoTextView = findViewById(R.id.audio_file_provider_info);
         // Set an onClickListener to this view so that so that an implicit intent is sent to open a
         // web page when audioFileProviderInfoTextView is clicked
         audioFileProviderInfoTextView.setOnClickListener(new View.OnClickListener() {
@@ -48,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Find the view with ID author_search and instantiate it in a TextView object
-        authorSearchTextView = findViewById(R.id.author_search);
         // Set an onClickListener to this view so that  when authorSearchTextView is clicked
         // an implicit intent is sent to open a search on the web
         authorSearchTextView.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Find the view with ID author_info and instantiate it in a TextView object
-        authorInfoTextView = findViewById(R.id.author_info);
         // Set an onClickListener to this view so that  when authorInfoTextView is clicked
         // an implicit intent is sent to open a web page
         authorInfoTextView.setOnClickListener(new View.OnClickListener() {

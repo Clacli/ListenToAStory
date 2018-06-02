@@ -5,8 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/root_view_padding"
-    android:paddingLeft="24dp"
     android:paddingRight="24dp"
+    android:paddingLeft="24dp"
     android:paddingTop="@dimen/root_view_padding">
 
     <LinearLayout
