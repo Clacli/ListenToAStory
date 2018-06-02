@@ -22,40 +22,60 @@
         android:gravity="center|top"
         android:text="@string/editor" />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
-        android:orientation="vertical">
+        android:background="@color/library_list_item">
 
         <TextView
             android:id="@+id/library"
             style="@style/ActionTextViewStyle"
-            android:background="@color/library_list_item"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/library"
             android:textColor="@android:color/white" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/info_on_resource_provider">
 
         <TextView
             android:id="@+id/audio_file_provider_info"
             style="@style/ActionTextViewStyle"
-            android:background="@color/info_on_resource_provider"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/more_on_librivox"
             android:textColor="@android:color/black" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/web_search">
 
         <TextView
             android:id="@+id/author_search"
             style="@style/ActionTextViewStyle"
-            android:background="@color/web_search"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/search_aesop_on_the_web"
             android:textColor="@android:color/black" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/info_on_author">
 
         <TextView
             android:id="@+id/author_info"
             style="@style/ActionTextViewStyle"
-            android:background="@color/info_on_author"
+            android:background="?attr/selectableItemBackground"
             android:text="@string/more_on_aesop"
             android:textColor="@android:color/black" />
 
-    </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

@@ -178,8 +178,6 @@ public class NowPlayingActivity extends AppCompatActivity {
                         // raw resource ID
                         mMyMediaPlayer = MediaPlayer.create(NowPlayingActivity.this, fableRawResourceId);
 
-
-
                         // Set the max value for the seekbar geting duration of the playback (I)
                         seekbar.setMax(mMyMediaPlayer.getDuration());
 
