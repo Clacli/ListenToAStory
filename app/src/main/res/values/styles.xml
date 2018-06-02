@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
     </style>
 
     <!-- Main layout Book title TextViews style-->
@@ -27,11 +28,10 @@
     </style>
 
     <!-- MediaPlayer Button style -->
-    <style name="MediaPlayerButtonStyle">
+    <style name="MediaPlayerButtonStyle" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:layout_width">@dimen/button_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 

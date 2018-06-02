@@ -22,33 +22,40 @@
         android:gravity="center|top"
         android:text="@string/editor" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/library"
-        style="@style/ActionTextViewStyle"
-        android:background="@color/library_list_item"
-        android:text="@string/library"
-        android:textColor="@android:color/white" />
+        <TextView
+            android:id="@+id/library"
+            style="@style/ActionTextViewStyle"
+            android:background="@color/library_list_item"
+            android:text="@string/library"
+            android:textColor="@android:color/white" />
 
-    <TextView
-        android:id="@+id/audio_file_provider_info"
-        style="@style/ActionTextViewStyle"
-        android:background="@color/info_on_resource_provider"
-        android:text="@string/more_on_librivox"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/audio_file_provider_info"
+            style="@style/ActionTextViewStyle"
+            android:background="@color/info_on_resource_provider"
+            android:text="@string/more_on_librivox"
+            android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/author_search"
-        style="@style/ActionTextViewStyle"
-        android:background="@color/web_search"
-        android:text="@string/search_aesop_on_the_web"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/author_search"
+            style="@style/ActionTextViewStyle"
+            android:background="@color/web_search"
+            android:text="@string/search_aesop_on_the_web"
+            android:textColor="@android:color/black" />
 
-    <TextView
-        android:id="@+id/author_info"
-        style="@style/ActionTextViewStyle"
-        android:background="@color/info_on_author"
-        android:text="@string/more_on_aesop"
-        android:textColor="@android:color/black" />
+        <TextView
+            android:id="@+id/author_info"
+            style="@style/ActionTextViewStyle"
+            android:background="@color/info_on_author"
+            android:text="@string/more_on_aesop"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
 
 </LinearLayout>
