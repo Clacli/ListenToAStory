@@ -4,9 +4,9 @@
     <dimen name="button_width">0dp</dimen>
     <dimen name="button_horizontal_margin">16dp</dimen>
     <dimen name="height_of_book_title_text_views_main">0dp</dimen>
-    <dimen name="now_playing_root_view_padding">32dp</dimen>
+    <dimen name="port_now_playing_root_view_padding">32dp</dimen>
     <dimen name="library_title_container_vertical_spacing">8dp</dimen>
-    <dimen name="fable_title_container_padding">16dp</dimen>
+    <dimen name="port_fable_title_container_padding">16dp</dimen>
     <dimen name="fable_title_horizontal_padding">16dp</dimen>
     <dimen name="fable_title_vertical_space_external">16dp</dimen>
     <dimen name="fable_title_vertical_spacing">8dp</dimen>
@@ -15,4 +15,6 @@
     <dimen name="seekbar_horizontal_margin">8dp</dimen>
     <dimen name="button_container_vertical_margiin">8dp</dimen>
     <dimen name="button_container_horizontal_margin">8dp</dimen>
+    <dimen name="land_now_playing_root_view_padding">16dp</dimen>
+    <dimen name="land_fable_title_container_padding">8dp</dimen>
 </resources>

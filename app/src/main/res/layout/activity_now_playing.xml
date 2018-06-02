@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/now_playing_root_view_padding"
+    android:padding="@dimen/port_now_playing_root_view_padding"
     tools:context=".NowPlayingActivity">
 
     <LinearLayout
         android:id="@+id/mediaplayer_title_viewgroup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:padding="@dimen/fable_title_container_padding"
+        android:padding="@dimen/port_fable_title_container_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

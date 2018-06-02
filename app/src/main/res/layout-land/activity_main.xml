@@ -37,9 +37,7 @@
         android:orientation="vertical">
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            style="@style/FrameLayoutStyle"
             android:background="@color/library_list_item">
 
             <TextView
@@ -52,9 +50,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            style="@style/FrameLayoutStyle"
             android:background="@color/info_on_resource_provider">
 
             <TextView
@@ -67,9 +63,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            style="@style/FrameLayoutStyle"
             android:background="@color/web_search">
 
             <TextView
@@ -82,9 +76,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            style="@style/FrameLayoutStyle"
             android:background="@color/info_on_author">
 
             <TextView
