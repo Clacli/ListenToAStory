@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="@dimen/root_view_padding">
+    android:paddingBottom="@dimen/root_view_padding"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="@dimen/root_view_padding">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -46,6 +49,7 @@
         android:id="@+id/duration"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:drawableTop="@mipmap/ic_round_play_arrow_white_24"
         android:gravity="bottom"
         android:textColor="@android:color/white" />
 
