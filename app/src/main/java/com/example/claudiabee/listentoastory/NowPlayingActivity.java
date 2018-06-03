@@ -12,15 +12,22 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NowPlayingActivity extends AppCompatActivity {
 
     // Define global variables of the class
-    private TextView titleOfBookTextView;
-    private TextView titleOfFableTextView;
-    private TextView readerNameTextView;
-
-    private Button playButton;
-    private Button pauseButton;
+    @BindView(R.id.title_of_the_book)
+    TextView titleOfBookTextView;
+    @BindView(R.id.title_of_the_fable)
+    TextView titleOfFableTextView;
+    @BindView(R.id.name_of_the_reader)
+    TextView readerNameTextView;
+    @BindView(R.id.play_button)
+    Button playButton;
+    @BindView(R.id.pause_button)
+    Button pauseButton;
 
     private String fableTitle;
     private String readerName;
@@ -28,7 +35,9 @@ public class NowPlayingActivity extends AppCompatActivity {
     int fableRawResourceId;
 
     // Create a seekbar as a member variable (I)
-    private SeekBar seekbar;
+    @BindView(R.id.seekbar)
+    SeekBar seekbar;
+
     // Create a handler to constantly update the seekbar (I)
     private Handler mSeekbarHandler = new Handler();
 
@@ -111,10 +120,12 @@ public class NowPlayingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
+        ButterKnife.bind(this);
 
         // Create and set up the {@link AudioManager} to request audio focus
         mMyAudioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
 
+        /*
         // Find the view with ID title_of_the_fable and instantiate it in a TextView object
         titleOfFableTextView = (TextView) findViewById(R.id.title_of_the_fable);
         // Find the view with ID name_of_the_reader and instantiate it in a TextView object
@@ -124,7 +135,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         // Find the view button with ID play_button and  create an instance of it as a button object
         playButton = (Button) findViewById(R.id.play_button);
         // Find the button with ID pause_button and  create an instance of it as a button object
-        pauseButton = (Button) findViewById(R.id.pause_button);
+        pauseButton = (Button) findViewById(R.id.pause_button);*/
 
         // Get the intent that started the activity and store it in a variable
         final Intent i = getIntent();

@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.claudiabee.listentoastory.Fable;
-import com.example.claudiabee.listentoastory.R;
-
 import java.util.ArrayList;
 
 /**
@@ -19,6 +16,21 @@ import java.util.ArrayList;
  * based on a data source, which is a list of {@link Fable} objects.
  */
 public class FableAdapter extends ArrayAdapter<Fable> {
+
+    /*// Bind views with Butter Knife and cast views in layout
+    @BindView(R.id.fable_title)
+    TextView fableTitleTextView;
+    @BindView(R.id.reader_name)
+    TextView readerNameTextView;
+    @BindView(R.id.book_title)
+    TextView bookTitleTextView;
+    @BindView(R.id.duration)
+    TextView fableDurationTextView;*/
+
+    private TextView fableTitleTextView;
+    private TextView readerNameTextView;
+    private TextView bookTitleTextView;
+    private TextView fableDurationTextView;
 
     /**
      * Create a new {@link FableAdapter} object.
@@ -50,12 +62,14 @@ public class FableAdapter extends ArrayAdapter<Fable> {
 
         //Find the TextView in the fable_list_item.xml layout with ID fable_title
         TextView fableTitleTextView = listItemView.findViewById(R.id.fable_title);
+
         // Get the title of the fable from the currentFable object and set this text
         //on the fableTitleTextView
         fableTitleTextView.setText(currentFable.getFableTitle());
 
         // Find the TextView in the fable_list_item.xml layout with ID reader_name
         TextView readerNameTextView = listItemView.findViewById(R.id.reader_name);
+
         // Get the reader's name from the currentFable object and set this text
         // in the readerNameTextView
         readerNameTextView.setText(currentFable.getReaderName());
@@ -68,6 +82,7 @@ public class FableAdapter extends ArrayAdapter<Fable> {
 
         // Find the textView in the fable_list_item.xml layout with ID duration
         TextView fableDurationTextView = listItemView.findViewById(R.id.duration);
+
         // Get the duration of the fable audio file from the current Fable object and set this text
         // in the fableDurationTextView
         fableDurationTextView.setText(currentFable.getAudioDuration());

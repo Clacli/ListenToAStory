@@ -14,6 +14,9 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String aesopFable = "Aesop fable";
+    private final String wHomeUrl = "https://en.wikipedia.org/wiki/Aesop";
+    private final String lVHomeUrl = "https://librivox.org/";
     //Bind views with Butter Knife and cast views in layout
     @BindView(R.id.library)
     TextView libraryTextView;
@@ -23,11 +26,6 @@ public class MainActivity extends AppCompatActivity {
     TextView authorSearchTextView;
     @BindView(R.id.author_info)
     TextView authorInfoTextView;
-
-    private final String lVHomeUrl = "https://librivox.org/";
-    public final String aesopFable = "Aesop fable";
-    public final String wHomeUrl = "https://en.wikipedia.org/wiki/Aesop";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
