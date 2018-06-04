@@ -51,3 +51,5 @@ You can discover new books, become a volunteer reader or just know more about Li
 Wikipedia the free encyclopedia
 				https://en.wikipedia.org/wiki/Main_Page
 				
+To fix: save MediaPlayer playback on screen rotation
+				
