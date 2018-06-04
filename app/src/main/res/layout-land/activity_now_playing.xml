@@ -22,8 +22,8 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@android:color/white"
+            android:textSize="@dimen/now_playing_fable_title_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/read_by"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:textSize="@dimen/now_playing_read_by_text_size"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="@dimen/now_playing_fable_detail_text_size"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -49,7 +49,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="@dimen/now_playing_fable_detail_text_size"
             android:textColor="@android:color/white" />
 
     </LinearLayout>

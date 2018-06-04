@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingBottom="@dimen/root_view_padding"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp"
-    android:paddingTop="@dimen/root_view_padding">
+    android:paddingBottom="@dimen/fable_list_item_vertical_root_view_padding"
+    android:paddingLeft="@dimen/fable_list_item_horizontal_root_view_padding"
+    android:paddingRight="@dimen/fable_list_item_horizontal_root_view_padding"
+    android:paddingTop="@dimen/fable_list_item_vertical_root_view_padding">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -19,7 +19,7 @@
             android:id="@+id/fable_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:textSize="@dimen/library_title_of_fable_text_size"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 

@@ -28,8 +28,8 @@
             android:paddingLeft="@dimen/fable_title_horizontal_padding"
             android:paddingRight="@dimen/fable_title_horizontal_padding"
             android:paddingTop="@dimen/fable_title_vertical_space_external"
-            android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@android:color/white"
+            android:textSize="@dimen/now_playing_fable_title_text_size"
             android:textStyle="bold" />
 
         <TextView
@@ -41,8 +41,8 @@
             android:paddingRight="@dimen/fable_title_horizontal_padding"
             android:paddingTop="@dimen/fable_title_vertical_spacing"
             android:text="@string/read_by"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/now_playing_read_by_text_size" />
 
         <TextView
             android:id="@+id/name_of_the_reader"
@@ -53,8 +53,8 @@
             android:paddingLeft="@dimen/fable_title_horizontal_padding"
             android:paddingRight="@dimen/fable_title_horizontal_padding"
             android:paddingTop="@dimen/fable_title_vertical_spacing"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/now_playing_fable_detail_text_size" />
 
         <TextView
             android:id="@+id/title_of_the_book"
@@ -65,8 +65,8 @@
             android:paddingLeft="@dimen/fable_title_horizontal_padding"
             android:paddingRight="@dimen/fable_title_horizontal_padding"
             android:paddingTop="@dimen/fable_title_vertical_spacing"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/now_playing_fable_detail_text_size" />
 
     </LinearLayout>
 

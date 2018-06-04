@@ -17,6 +17,7 @@ import butterknife.ButterKnife;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
+    public static final String PLAYBACK_POSITION = "cp";
     // Define global variables of the class
     @BindView(R.id.title_of_the_book)
     TextView titleOfBookTextView;
@@ -50,6 +51,9 @@ public class NowPlayingActivity extends AppCompatActivity {
      * Handles audio focus when playing a sound file
      */
     private AudioManager mMyAudioManager;
+
+    // The current position of the playback
+    private double playbackPosition;
 
     /**
      * This listener gets triggered whenever the audio focus changes
@@ -115,6 +119,7 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         }
     };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,6 +214,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                 }
             }
         });
+
 
         // Set an onclick listener on the pauseButton object
         pauseButton.setOnClickListener(new View.OnClickListener() {
