@@ -1,4 +1,4 @@
-package com.example.claudiabee.listentoastory.activity;
+package com.example.claudiabee.listentoastory.activities;
 
 import android.content.Context;
 import android.content.Intent;
