@@ -1,4 +1,4 @@
-package com.example.claudiabee.listentoastory;
+package com.example.claudiabee.listentoastory.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -8,6 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.claudiabee.listentoastory.Fable;
+import com.example.claudiabee.listentoastory.FableAdapter;
+import com.example.claudiabee.listentoastory.R;
 
 import java.util.ArrayList;
 

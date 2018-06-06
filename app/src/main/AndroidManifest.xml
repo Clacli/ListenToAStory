@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- The main/home activity (it has no parent activity) -->
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,22 +18,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LibraryActivity"
+            android:name=".activity.LibraryActivity"
             android:label="@string/library"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activity.MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.claudiabee.listentoastory.MainActivity"/>
+                android:value="com.example.claudiabee.listentoastory.activity.MainActivity" />
         </activity>
         <activity
-            android:name=".NowPlayingActivity"
+            android:name=".activity.NowPlayingActivity"
             android:label="@string/now_playing"
-            android:parentActivityName=".LibraryActivity">
+            android:parentActivityName=".activity.LibraryActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.claudiabee.listentoastory.LibraryActivity"/>
+                android:value="com.example.claudiabee.listentoastory.activity.LibraryActivity" />
         </activity>
     </application>
 </manifest>

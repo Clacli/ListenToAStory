@@ -1,4 +1,4 @@
-package com.example.claudiabee.listentoastory;
+package com.example.claudiabee.listentoastory.activity;
 
 import android.app.SearchManager;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.claudiabee.listentoastory.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
