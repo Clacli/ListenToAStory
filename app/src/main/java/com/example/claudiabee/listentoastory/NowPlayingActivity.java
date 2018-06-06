@@ -29,16 +29,13 @@ public class NowPlayingActivity extends AppCompatActivity {
     Button playButton;
     @BindView(R.id.pause_button)
     Button pauseButton;
-
-    private String fableTitle;
-    private String readerName;
-    private String bookTitle;
     int fableRawResourceId;
-
     // Create a seekbar as a member variable (I)
     @BindView(R.id.seekbar)
     SeekBar seekbar;
-
+    private String fableTitle;
+    private String readerName;
+    private String bookTitle;
     // Create a handler to constantly update the seekbar (I)
     private Handler mSeekbarHandler = new Handler();
 
@@ -54,7 +51,46 @@ public class NowPlayingActivity extends AppCompatActivity {
 
     // The current position of the playback
     private double playbackPosition;
+    // Create a SeekBar.OnSeekBarChangeListener to seek the raw file to a particular time
+    // to seek the position where the seek bar pointer is
+    private SeekBar.OnSeekBarChangeListener mOnSeekBarChangeListener =
+            new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    if (fromUser) {
+                        mMyMediaPlayer.seekTo(progress);
+                    }
+                }
 
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            };
+    // This runnable helps the handler to update the seekbar (I)
+    private Runnable mUpdateAudioSeekbar = new Runnable() {
+        @Override
+        public void run() {
+            seekbar.setProgress(mMyMediaPlayer.getCurrentPosition());
+            // the handler updates the seek every 50ms
+            mSeekbarHandler.postDelayed(this, 50);
+        }
+    };
+    private MediaPlayer.OnCompletionListener mOnCompletionListener =
+            new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    releaseMyMediaPlayer();
+                    // Remove the handler (I)
+                    mSeekbarHandler.removeCallbacks(mUpdateAudioSeekbar);
+
+                }
+            };
     /**
      * This listener gets triggered whenever the audio focus changes
      * (i.e., we gain or lose audio focus because of another app or device).
@@ -84,42 +120,6 @@ public class NowPlayingActivity extends AppCompatActivity {
                     }
                 }
             };
-
-    // Create a SeekBar.OnSeekBarChangeListener to seek the raw file to a particular time
-    // to seek the position where the seek bar pointer is
-    private SeekBar.OnSeekBarChangeListener mOnSeekBarChangeListener =
-            new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    if (fromUser) {
-                        mMyMediaPlayer.seekTo(progress);
-                    }
-                }
-
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-
-                }
-            };
-
-
-
-    private MediaPlayer.OnCompletionListener mOnCompletionListener =
-            new MediaPlayer.OnCompletionListener() {
-        @Override
-        public void onCompletion(MediaPlayer mp) {
-            releaseMyMediaPlayer();
-            // Remove the handler (I)
-            mSeekbarHandler.removeCallbacks(mUpdateAudioSeekbar);
-
-        }
-    };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,8 +165,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         if (bookTitle != null) {
             titleOfBookTextView.setText(bookTitle);
         }
-
-        // TODO: Manage playback state on change configuration
 
         // Set an onclick listener on the playButton object
         playButton.setOnClickListener(new View.OnClickListener() {
@@ -248,14 +246,4 @@ public class NowPlayingActivity extends AppCompatActivity {
             mMyAudioManager.abandonAudioFocus(mAudioFocusChangeListener);
         }
     }
-
-    // This runnable helps the handler to update the seekbar (I)
-    private Runnable mUpdateAudioSeekbar = new Runnable() {
-        @Override
-        public void run(){
-            seekbar.setProgress(mMyMediaPlayer.getCurrentPosition());
-            // the handler updates the seek every 50ms
-            mSeekbarHandler.postDelayed(this, 50);
-        }
-    };
 }
