@@ -32,7 +32,21 @@ public class LibraryActivity extends AppCompatActivity {
         fables.add(new Fable("The Fir-Tree and The Bramble", "ajfluke", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_fir_tree_and_the_bramble, "00:01:14"));
         fables.add(new Fable("The Frogs’ Complaint Against The Sun", "ajfluke", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_frogs_complaint_against_the_sun, "00:01:02"));
         fables.add(new Fable("The Dog, The Cock, and The Fox", "Desdemona", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_dog_the_cock_and_the_fox, "00:01:04"));
-
+        fables.add(new Fable("The Gnat and The Bull", "Desdemona", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_gnat_and_the_bull, "00:00:48"));
+        fables.add(new Fable("The Bear and The Travellers", "Desdemona", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_bear_and_the_travelles, "00:01:14"));
+        fables.add(new Fable("The Slave and The Lion", "Basil Monroe Godevenos", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_slave_and_the_lion, "00:02:21"));
+        fables.add(new Fable("The Flea and The Man", "Basil Monroe Godevenos", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_flea_and_the_man, "00:01:22"));
+        fables.add(new Fable("The Bee and Jupiter", "Basil Monroe Godevenos", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_bee_and_jupiter, "00:01:11"));
+        fables.add(new Fable("The Oak and The Reeds", "phoenixascending", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_oak_and_the_reeds, "00:01:02"));
+        fables.add(new Fable("The Blind Man and The Cub", "phoenixascending", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_blind_man_and_the_cub, "00:00:56"));
+        fables.add(new Fable("The Boy and The Snails", "phoenixascending", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_boy_and_the_snails, "00:00:56"));
+        fables.add(new Fable("The Apes and The Two Travellers", "Rainer", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_apes_and_the_two_travellers, "00:02:06"));
+        fables.add(new Fable("The Ass and His Burden", "Patrick McNeal", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_ass_and_his_burden, "00:01:24"));
+        fables.add(new Fable("The Sheperd\'s Boy and The Wolf", "Sara Schein", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_sheperds_boy_and_the_wolf, "00:01:29"));
+        fables.add(new Fable("The Fox and The Goat", "Sara Schein", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_fox_and_the_goat, "00:01:29"));
+        fables.add(new Fable("The Fisherman and The Sprat", "Gesine", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_fisherman_and_the_sprat, "00:01:14"));
+        fables.add(new Fable("The Boasting Traveller", "Patrick McNeal", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_boasting_traveller, "00:00:56"));
+        fables.add(new Fable("The Crab and His Mother", "Robert Garrison", "Aesop's Fables, Volume 02,\n(Fables 26-50)", R.raw.the_crab_and_his_mother, "00:00:57"));
 
         // Find a reference to the {@link ListView} in the layout and store it in an object variable
         ListView listItemView = findViewById(R.id.fable_list);
